@@ -26,3 +26,17 @@ if (!$app['db']->getSchemaManager()->tablesExist('bookings')) {
 		payingMethod VARCHAR(10) NOT NULL)"
 	);
 }
+
+
+********** Application.php **********
+// Database configuration
+        $this->register(new DoctrineServiceProvider(), [
+		    'db.options' => [
+		        'driver'   => 'pdo_mysql',
+		        'path'     => __DIR__.'/app.db',
+		        'dbname'    => 'jobit',
+		        'user'      => 'root',
+		        'password'  => 'Password0',
+		        'charset'   => 'utf8mb4',
+		    ],
+		]);
